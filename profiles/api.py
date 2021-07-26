@@ -508,11 +508,11 @@ def delete_contact_info(request):
             ),
             "name": openapi.Schema(
                 type=openapi.TYPE_STRING,
-                description="lang name",
+                description="language name",
             ),
             "level": openapi.Schema(
                 type=openapi.TYPE_STRING,
-                description="contact url",
+                description="language level",
             ),
         },
     ),
@@ -543,80 +543,224 @@ def add_language(request):
         return Response({"status": unexpected})
 
 
+@swagger_auto_schema(
+    method="post",
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            "id": openapi.Schema(
+                type=openapi.TYPE_INTEGER,
+                description="language id",
+            ),
+            "name": openapi.Schema(
+                type=openapi.TYPE_STRING,
+                description="language name",
+            ),
+            "level": openapi.Schema(
+                type=openapi.TYPE_STRING,
+                description="language level",
+            ),
+        },
+    ),
+    responses={
+        "200": openapi.Response(
+            description="created successfully",
+            examples={"application/json": {"status": 1000}},
+        ),
+        "201": openapi.Response(
+            description="something went wrong",
+            examples={"application/json": {"status": 2000}},
+        ),
+    },
+)
 @api_view(["POST"])
 def edit_language(request):
+    try:
+        id = request.data.get("id")
+        name = request.data.get("name")
+        level = request.data.get("level")
 
-    id = request.data.get("id")
-    name = request.data.get("name")
-    level = request.data.get("level")
+        language = models.Languages.objects.get(id=id)
 
-    language = models.Languages.objects.get(id=id)
+        def edit():
+            if name != None:
+                if name != "":
+                    language.name = name
+            if level != None:
+                if level != "":
+                    language.level = level
 
-    def edit():
-        if name != None:
-            if name != "":
-                language.name = name
-        if level != None:
-            if level != "":
-                language.level = level
-
-    edit()
-    language.save()
-    return Response({"status": "successful"})
+        edit()
+        language.save()
+        return Response({"status": successful})
+    except:
+        return Response({"status": unexpected})
 
 
+@swagger_auto_schema(
+    method="post",
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            "id": openapi.Schema(
+                type=openapi.TYPE_INTEGER,
+                description="language id",
+            ),
+        },
+    ),
+    responses={
+        "200": openapi.Response(
+            description="created successfully",
+            examples={"application/json": {"status": 1000}},
+        ),
+        "201": openapi.Response(
+            description="something went wrong",
+            examples={"application/json": {"status": 2000}},
+        ),
+    },
+)
 @api_view(["POST"])
 def delete_language(request):
+    try:
+        id = request.data.get("id")
 
-    id = request.data.get("id")
+        language = models.Languages.objects.get(id=id).delete()
 
-    language = models.Languages.objects.get(id=id).delete()
-
-    return Response({"status": "successful"})
+        return Response({"status": successful})
+    except:
+        return Response({"status": unexpected})
 
 
 # ---------------------------------------------------------------- phone_numbers
+@swagger_auto_schema(
+    method="post",
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            "id": openapi.Schema(
+                type=openapi.TYPE_INTEGER,
+                description="user id",
+            ),
+            "name": openapi.Schema(
+                type=openapi.TYPE_STRING,
+                description="phone name",
+            ),
+            "number": openapi.Schema(
+                type=openapi.TYPE_STRING,
+                description="the number",
+            ),
+        },
+    ),
+    responses={
+        "200": openapi.Response(
+            description="created successfully",
+            examples={"application/json": {"status": 1000}},
+        ),
+        "201": openapi.Response(
+            description="something went wrong",
+            examples={"application/json": {"status": 2000}},
+        ),
+    },
+)
 @api_view(["POST"])
 def add_phone_number(request):
+    try:
+        id = request.data.get("id")
+        name = request.data.get("name")
+        number = request.data.get("number")
 
-    id = request.data.get("id")
-    name = request.data.get("name")
-    number = request.data.get("number")
-
-    profile = models.profiles.objects.get(id=id)
-    phone_number = models.phone_numbers.objects.create(
-        name=name, profile_id=profile, number=number
-    )
-    return Response({"status": "successful"})
+        profile = models.profiles.objects.get(id=id)
+        phone_number = models.phone_numbers.objects.create(
+            name=name, profile_id=profile, number=number
+        )
+        return Response({"status": successful})
+    except:
+        return Response({"status": unexpected})
 
 
+@swagger_auto_schema(
+    method="post",
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            "id": openapi.Schema(
+                type=openapi.TYPE_INTEGER,
+                description="phone id",
+            ),
+            "name": openapi.Schema(
+                type=openapi.TYPE_STRING,
+                description="phone name",
+            ),
+            "number": openapi.Schema(
+                type=openapi.TYPE_STRING,
+                description="the number",
+            ),
+        },
+    ),
+    responses={
+        "200": openapi.Response(
+            description="created successfully",
+            examples={"application/json": {"status": 1000}},
+        ),
+        "201": openapi.Response(
+            description="something went wrong",
+            examples={"application/json": {"status": 2000}},
+        ),
+    },
+)
 @api_view(["POST"])
 def edit_phone_number(request):
+    try:
+        id = request.data.get("id")
+        name = request.data.get("name")
+        number = request.data.get("number")
 
-    id = request.data.get("id")
-    name = request.data.get("name")
-    number = request.data.get("number")
+        phone_number = models.phone_numbers.objects.get(id=id)
 
-    phone_number = models.phone_numbers.objects.get(id=id)
+        def edit():
+            if name != None:
+                if name != "":
+                    phone_number.name = name
+            if number != None:
+                if number != "":
+                    phone_number.number = number
 
-    def edit():
-        if name != None:
-            if name != "":
-                phone_number.name = name
-        if number != None:
-            if number != "":
-                phone_number.number = number
-
-    edit()
-    phone_number.save()
-    return Response({"status": "successful"})
+        edit()
+        phone_number.save()
+        return Response({"status": successful})
+    except:
+        return Response({"status": unexpected})
 
 
+@swagger_auto_schema(
+    method="post",
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            "id": openapi.Schema(
+                type=openapi.TYPE_INTEGER,
+                description="phone id",
+            ),
+        },
+    ),
+    responses={
+        "200": openapi.Response(
+            description="created successfully",
+            examples={"application/json": {"status": 1000}},
+        ),
+        "201": openapi.Response(
+            description="something went wrong",
+            examples={"application/json": {"status": 2000}},
+        ),
+    },
+)
 @api_view(["POST"])
 def delete_phone_number(request):
+    try:
+        id = request.data.get("id")
 
-    id = request.data.get("id")
+        phone_number = models.phone_numbers.objects.get(id=id).delete()
 
-    phone_number = models.phone_numbers.objects.get(id=id).delete()
-
-    return Response({"status": "successful"})
+        return Response({"status": successful})
+    except:
+        return Response({"status": unexpected})
