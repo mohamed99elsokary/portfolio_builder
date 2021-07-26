@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'achievement_hyperlinks_list' %}">
+    hyperlinks Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>url</td><td>{{ object.url }}</td></tr>
+    <tr><td>start_index</td><td>{{ object.start_index }}</td></tr>
+    <tr><td>end_index</td><td>{{ object.end_index }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>profiles</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_city_list' %}">city Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_users_list' %}">users Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_phone_numbers_list' %}">phone_numbers Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_profiles_list' %}">profiles Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_job_titles_list' %}">job_titles Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_fields_list' %}">fields Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_contact_info_list' %}">contact_info Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'profiles_country_list' %}">country Listing</a></div>
+<div class="m-2"><h4>skills</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'skills_skills_list' %}">skills Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'skills_categories_list' %}">categories Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'skills_user_skills_list' %}">user_skills Listing</a></div>
+<div class="m-2"><h4>work_experience</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'work_experience_work_experience_list' %}">work_experience Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'work_experience_bullet_points_list' %}">bullet_points Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'work_experience_organizations_list' %}">organizations Listing</a></div>
+<div class="m-2"><h4>education</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'education_education_list' %}">education Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'education_courses_list' %}">courses Listing</a></div>
+<div class="m-2"><h4>projects</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'projects_bullet_points_list' %}">bullet_points Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'projects_urls_list' %}">urls Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'projects_projects_list' %}">projects Listing</a></div>
+<div class="m-2"><h4>achievement</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'achievement_achievement_list' %}">achievement Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'achievement_hyperlinks_list' %}">hyperlinks Listing</a></div>
+{% endblock %}

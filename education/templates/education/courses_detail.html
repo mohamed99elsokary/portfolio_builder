@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'education_courses_list' %}">
+    courses Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>certificate_url</td><td>{{ object.certificate_url }}</td></tr>
+    <tr><td>name</td><td>{{ object.name }}</td></tr>
+    <tr><td>start_date</td><td>{{ object.start_date }}</td></tr>
+    <tr><td>course_expected_time</td><td>{{ object.course_expected_time }}</td></tr>
+    <tr><td>end_date</td><td>{{ object.end_date }}</td></tr>
+    <tr><td>highlight</td><td>{{ object.highlight }}</td></tr>
+    <tr><td>certificate_file</td><td>{{ object.certificate_file }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

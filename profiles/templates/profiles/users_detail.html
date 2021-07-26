@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'profiles_users_list' %}">
+    users Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>password</td><td>{{ object.password }}</td></tr>
+    <tr><td>email</td><td>{{ object.email }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

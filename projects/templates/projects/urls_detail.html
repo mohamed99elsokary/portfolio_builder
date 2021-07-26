@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'projects_urls_list' %}">
+    urls Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>url</td><td>{{ object.url }}</td></tr>
+    <tr><td>name</td><td>{{ object.name }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
