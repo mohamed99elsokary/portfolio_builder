@@ -553,7 +553,7 @@ def get(request, id):
         ),
     },
 )
-@api_view(["POST", "GET"])
+@api_view(["GET"])
 def get_all(request):
     try:
         user = models.profiles.objects.all()
