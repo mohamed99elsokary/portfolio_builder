@@ -1,7 +1,9 @@
 from rest_framework import serializers
 from drf_writable_nested.serializers import WritableNestedModelSerializer
+
 import skills.serializers as skills_serializers
 import skills.models as skills_models
+
 import achievement.serializers as achievements_serializers
 import achievement.models as achievements_models
 import projects.serializers as projects_serializers
@@ -10,6 +12,7 @@ import work_experience.serializers as work_experience_serializers
 import work_experience.models as work_experience_models
 import education.serializers as education_serializers
 import education.models as education_models
+
 
 from . import models
 from django.contrib.auth.models import User
@@ -88,7 +91,7 @@ class profilesSerializer(serializers.ModelSerializer):
         many=True, source="profile_skills"
     )
     contact_info = contact_infoSerializer(many=True, source="profile_contacts")
-    phone_numbers = phone_numbersSerializer(many=True, source="profile_phones")
+    # phone_numbers = phone_numbersSerializer(many=True, source="profile_phones")
 
     Languages = LanguagesSerializer(many=True, source="profile_Languages")
     country = serializers.SlugRelatedField(
@@ -112,4 +115,22 @@ class profilesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.profiles
-        exclude = ("country_id", "city_id", "field_id", "job_titles_id", "user")
+        fields = [
+            "id",
+            "name",
+            "email",
+            "work_experience",
+            "projects",
+            "skills",
+            "awards",
+            "achievements",
+            "contact_info",
+            "Languages",
+            "country",
+            "city",
+            "field",
+            "education",
+            "job_title",
+            "profile_phones",
+        ]
+        # exclude = ("country_id", "city_id", "field_id", "job_titles_id", "user")
