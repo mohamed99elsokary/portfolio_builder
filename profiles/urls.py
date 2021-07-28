@@ -6,6 +6,7 @@ from . import api
 
 urlpatterns = [
     path("<int:id>", api.get),
+    path("", api.get_all),
     path("create/", api.create),
     path("edit/", api.edit),
     # ----------------------------------------------------------------contact_info
@@ -20,4 +21,6 @@ urlpatterns = [
     path("add_phone_number/", api.add_phone_number),
     path("edit_phone_number/", api.edit_phone_number),
     path("delete_phone_number/", api.delete_phone_number),
+    ######
+    path("joker/", api.joker),
 ]

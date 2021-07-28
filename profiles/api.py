@@ -11,6 +11,14 @@ from drf_yasg.utils import swagger_auto_schema
 from status import *
 
 
+@api_view(["GET"])
+def joker(request):
+    try:
+        return Response("status")
+    except:
+        return Response("status")
+
+
 # ----------------------------------------------------------- user
 @swagger_auto_schema(
     method="post",
@@ -356,6 +364,208 @@ def get(request, id):
         # id = request.data.get("id")
         user = models.profiles.objects.get(id=id)
         data = profilesSerializer(user).data
+        return Response({"data": data, "status": successful})
+    except:
+        return Response({"data": data, "status": unexpected})
+
+
+@swagger_auto_schema(
+    method="post",
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            "id": openapi.Schema(
+                type=openapi.TYPE_INTEGER,
+                description="user id",
+            ),
+        },
+    ),
+    responses={
+        "200": openapi.Response(
+            description="created successfully",
+            examples={
+                "application/json": {
+                    "data": {
+                        "id": 22,
+                        "education": [
+                            {
+                                "id": 7,
+                                "courses": [
+                                    {
+                                        "id": 3,
+                                        "certificate_url": "www.google.come",
+                                        "name": "django rest",
+                                        "start_date": "2021-07-20",
+                                        "course_expected_time": "100 days",
+                                        "end_date": "2021-07-20",
+                                        "is_highlighted": True,
+                                        "certificate_file": None,
+                                        "education_id": 7,
+                                    },
+                                    {
+                                        "id": 4,
+                                        "certificate_url": "www.google.come",
+                                        "name": "Flask",
+                                        "start_date": "2021-07-20",
+                                        "course_expected_time": "100 days",
+                                        "end_date": "2021-07-20",
+                                        "is_highlighted": False,
+                                        "certificate_file": None,
+                                        "education_id": 7,
+                                    },
+                                ],
+                                "organization": {
+                                    "id": 1,
+                                    "tags": [
+                                        {"id": 1, "tag": "ud"},
+                                        {"id": 2, "tag": "udaaaa"},
+                                    ],
+                                    "icon": None,
+                                    "icon_url": None,
+                                    "name": "udacity",
+                                },
+                                "end_date": "2021-12-20",
+                                "start_date": "2021-07-01",
+                                "profile_id": 22,
+                                "organization_id": 1,
+                            }
+                        ],
+                        "work_experience": [
+                            {
+                                "id": 4,
+                                "organization": {
+                                    "id": 1,
+                                    "tags": [
+                                        {"id": 1, "tag": "ud"},
+                                        {"id": 2, "tag": "udaaaa"},
+                                    ],
+                                    "icon": None,
+                                    "icon_url": None,
+                                    "name": "udacity",
+                                },
+                                "bullet_points": [
+                                    {"id": 4, "point_text": "point_text"}
+                                ],
+                                "end_date": "2021-07-20",
+                                "start_date": "2021-07-20",
+                            }
+                        ],
+                        "projects": [
+                            {
+                                "id": 3,
+                                "bullet_points": [
+                                    {
+                                        "id": 2,
+                                        "point_text": "point_text",
+                                        "project_id": 3,
+                                    }
+                                ],
+                                "urls": [
+                                    {
+                                        "id": 3,
+                                        "url": "www.google.com",
+                                        "name": "name",
+                                        "project_id": 3,
+                                    }
+                                ],
+                                "descreption": "descreption",
+                                "icon": None,
+                                "start_date": "2021-07-20",
+                                "name": "name",
+                                "icon_url": "www.google.com",
+                                "end_date": None,
+                                "profile_id": 22,
+                            }
+                        ],
+                        "awards": [
+                            {
+                                "id": 4,
+                                "hyperlinks": [
+                                    {
+                                        "id": 6,
+                                        "url": "www.google.com",
+                                        "start_index": 2,
+                                        "end_index": 15,
+                                    }
+                                ],
+                                "text": "asadasdasd",
+                                "order": 2,
+                            },
+                            {
+                                "id": 5,
+                                "hyperlinks": [],
+                                "text": "asadasdasd",
+                                "order": 2,
+                            },
+                        ],
+                        "achievements": [
+                            {
+                                "id": 4,
+                                "hyperlinks": [
+                                    {
+                                        "id": 7,
+                                        "url": "www.google.com",
+                                        "start_index": 2,
+                                        "end_index": 15,
+                                    }
+                                ],
+                                "text": "asadasdasd",
+                                "order": 2,
+                            }
+                        ],
+                        "skills": [
+                            {
+                                "id": 2,
+                                "category": "backend",
+                                "skill": "python",
+                                "projects_number": 5,
+                                "sample_url": "",
+                            },
+                            {
+                                "id": 4,
+                                "category": "backend",
+                                "skill": "django",
+                                "projects_number": 10,
+                                "sample_url": "string",
+                            },
+                        ],
+                        "contact_info": [
+                            {
+                                "id": 2,
+                                "name": "facebook",
+                                "icon": None,
+                                "url": "www.facebook.com",
+                            }
+                        ],
+                        "phone_numbers": [
+                            {"id": 1, "number": "+201111155856", "name": "English"}
+                        ],
+                        "Languages": [{"id": 1, "name": "English", "level": 1}],
+                        "country": "Egypt",
+                        "city": "Cairo",
+                        "job_title": "django developer",
+                        "field": "developer",
+                        "email": "jzzxcozxckcasdzsdaasdsdzccasdc@gmail.com",
+                        "about": "any about for now ",
+                        "image": None,
+                        "name": "joker",
+                        "birth_date": "2021-07-20",
+                    },
+                    "status": 1000,
+                }
+            },
+        ),
+        "201": openapi.Response(
+            description="something went wrong",
+            examples={"application/json": {"status": 2000}},
+        ),
+    },
+)
+@api_view(["POST", "GET"])
+def get_all(request):
+    try:
+        user = models.profiles.objects.all()
+        data = profilesSerializer(user, many=True).data
         return Response({"data": data, "status": successful})
     except:
         return Response({"data": data, "status": unexpected})
