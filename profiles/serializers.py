@@ -91,13 +91,6 @@ class profilesSerializer(serializers.ModelSerializer):
     phone_numbers = phone_numbersSerializer(many=True, source="profile_phones")
 
     Languages = LanguagesSerializer(many=True, source="profile_Languages")
-    """Languages = serializers.SlugRelatedField(
-        many=True,
-        read_only=True,
-        slug_field="name",
-        source="profile_Languages",
-    )"""
-
     country = serializers.SlugRelatedField(
         queryset=models.country.objects.all(), slug_field="country", source="country_id"
     )
@@ -119,6 +112,4 @@ class profilesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.profiles
-        exclude = ("user",)
-
         exclude = ("country_id", "city_id", "field_id", "job_titles_id", "user")
