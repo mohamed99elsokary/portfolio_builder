@@ -11,14 +11,6 @@ from drf_yasg.utils import swagger_auto_schema
 from status import *
 
 
-@api_view(["GET"])
-def joker(request):
-    try:
-        return Response("status")
-    except:
-        return Response("status")
-
-
 # ----------------------------------------------------------- user
 @swagger_auto_schema(
     method="post",

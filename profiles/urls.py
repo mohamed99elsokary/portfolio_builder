@@ -22,5 +22,4 @@ urlpatterns = [
     path("edit_phone_number/", api.edit_phone_number),
     path("delete_phone_number/", api.delete_phone_number),
     ######
-    path("joker/", api.joker),
 ]
