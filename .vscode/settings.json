@@ -1,0 +1,18 @@
+{
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.globalModuleInstallation": true,
+    "cSpell.language": "en",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "portfolio",
+            "database": "${workspaceFolder:portfolio_builder}/db.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true,
+    "cSpell.words": [
+        "drf",
+        "yasg"
+    ],
+}

@@ -16,6 +16,7 @@ import education.models as education_models
 
 from . import models
 from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
 
 # from skills import serializers
@@ -115,22 +116,10 @@ class profilesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.profiles
-        fields = [
-            "id",
-            "name",
-            "email",
-            "work_experience",
-            "projects",
-            "skills",
-            "awards",
-            "achievements",
-            "contact_info",
-            "Languages",
-            "country",
-            "city",
-            "field",
-            "education",
-            "job_title",
-            "profile_phones",
-        ]
-        # exclude = ("country_id", "city_id", "field_id", "job_titles_id", "user")
+        exclude = ("country_id", "id", "city_id", "field_id", "job_titles_id", "user")
+
+
+class loginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Token
+        fields = ["key"]

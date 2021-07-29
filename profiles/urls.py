@@ -1,14 +1,18 @@
+from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token
 
 from . import api
 
 
 urlpatterns = [
+    # path("login/", include("rest_framework.urls")),
+    path("login/", api.login),
+    path("register/", api.register),
+    path("edit/", api.edit),
     path("<int:id>", api.get),
     path("", api.get_all),
-    path("create/", api.create),
-    path("edit/", api.edit),
     # ----------------------------------------------------------------contact_info
     path("create_contact_info/", api.create_contact_info),
     path("edit_contact_info/", api.edit_contact_info),

@@ -1,15 +1,15 @@
-from rest_framework import viewsets, permissions
-from rest_framework.response import Response
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
-from rest_framework.decorators import api_view
-
-from .serializers import *
-from . import models
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from status import *
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
+from . import models
+from .serializers import *
+from status import *
+from rest_framework.authtoken.models import Token
 
 # ----------------------------------------------------------- user
 @swagger_auto_schema(
@@ -39,14 +39,56 @@ from status import *
     },
 )
 @api_view(["POST"])
-def create(request):
+def register(request):
     try:
         email = request.data.get("email")
         password = request.data.get("password")
         user = User.objects.create_user(email=email, username=email, password=password)
-        profile = models.profiles.objects.create(id=user.id, user=user)
-        # data = userSerializer(user).data
-        return Response({"status": successful})
+        token = Token.objects.create(user=user)
+        profile = models.profiles.objects.create(id=user.id, user=user, token_id=token)
+        data = profilesSerializer(profile).data
+        return Response({"data": data, "status": successful})
+
+    except:
+        return Response({"status": unexpected})
+
+
+@swagger_auto_schema(
+    method="post",
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        properties={
+            "email": openapi.Schema(
+                type=openapi.TYPE_INTEGER,
+                description="email (unique)",
+            ),
+            "password": openapi.Schema(
+                type=openapi.TYPE_STRING,
+                description="password",
+            ),
+        },
+    ),
+    responses={
+        "200": openapi.Response(
+            description="created successfully",
+            examples={"application/json": {"status": 1000}},
+        ),
+        "201": openapi.Response(
+            description="something went wrong",
+            examples={"application/json": {"status": 2000}},
+        ),
+    },
+)
+@api_view(["POST"])
+def login(request):
+    try:
+        email = request.data.get("email")
+        password = request.data.get("password")
+        user = authenticate(username=email, password=password)
+        token = Token.objects.get(user=user)
+        data = loginSerializer(token).data
+        return Response({"data": data, "status": successful})
+
     except:
         return Response({"status": unexpected})
 
@@ -413,6 +455,7 @@ def create_contact_info(request):
         contact_info = models.contact_info.objects.create(
             name=name, url=url, profile_id=profile
         )
+
         return Response({"status": successful})
     except:
         return Response({"status": unexpected})

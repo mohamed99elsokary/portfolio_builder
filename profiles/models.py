@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+from rest_framework.authtoken.models import Token
 
 
 class country(models.Model):
@@ -62,8 +63,9 @@ class profiles(models.Model):
         "profiles.city", on_delete=models.CASCADE, null=True, blank=True
     )
 
+    token = models.OneToOneField(Token, on_delete=models.CASCADE, null=True, blank=True)
+
     # Fields
-    # id = models.IntegerField(primary_key=True)
 
     about = models.TextField(max_length=100, null=True, blank=True)
     image = models.ImageField(upload_to="upload/images/", null=True, blank=True)

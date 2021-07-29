@@ -1,11 +1,3 @@
-"""
-Django settings for portfolio_builder project.
-
-For more information on this file, see
-https://docs.djangoproject.com/
-
-"""
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -33,6 +25,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "rest_framework.authtoken",
     "profiles",
     "skills",
     "work_experience",
