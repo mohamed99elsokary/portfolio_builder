@@ -414,7 +414,7 @@ def get_all(request):
         return Response({"data": data, "status": unexpected})
 
 
-# ---------------------------------------------------------------- contact_info
+# ----------------------------------------------------------------- contact_info
 @swagger_auto_schema(
     method="post",
     request_body=openapi.Schema(
@@ -448,11 +448,12 @@ def get_all(request):
 @api_view(["POST"])
 def create_contact_info(request):
     try:
-        id = request.data.get("id")
+        token = request.data.get("token")
+        key = Token.objects.get(key=token)
         name = request.data.get("name")
         url = request.data.get("url")
 
-        profile = models.profiles.objects.get(id=id)
+        profile = models.profiles.objects.get(token=key)
         contact_info = models.contact_info.objects.create(
             name=name, url=url, profile_id=profile
         )
@@ -495,10 +496,13 @@ def create_contact_info(request):
 @api_view(["POST"])
 def edit_contact_info(request):
     try:
+        token = request.data.get("token")
         id = request.data.get("id")
         name = request.data.get("name")
         url = request.data.get("url")
 
+        key = Token.objects.get(key=token)
+        profile = models.profiles.objects.get(token=key)
         contact_info = models.contact_info.objects.get(id=id)
 
         def edit():
@@ -509,11 +513,15 @@ def edit_contact_info(request):
                 if url != "":
                     contact_info.url = url
 
-        edit()
-        contact_info.save()
-        return Response({"status": successful})
+        if contact_info.profile_id == profile:
+            edit()
+            contact_info.save()
+            return Response({"status": successful})
+        else:
+            return Response({"status": "btl b3bsa"})
+
     except:
-        return Response({"status": successful})
+        return Response({"status": unexpected})
 
 
 @swagger_auto_schema(
@@ -541,9 +549,16 @@ def edit_contact_info(request):
 @api_view(["POST"])
 def delete_contact_info(request):
     try:
+        token = request.data.get("token")
         id = request.data.get("id")
 
-        contact_info = models.contact_info.objects.get(id=id).delete()
+        key = Token.objects.get(key=token)
+        profile = models.profiles.objects.get(token=key)
+        contact_info = models.contact_info.objects.get(id=id)
+
+        if contact_info.profile_id == profile:
+
+            contact_info.delete()
 
         return Response({"status": successful})
     except:
