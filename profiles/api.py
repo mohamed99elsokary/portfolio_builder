@@ -393,7 +393,7 @@ def edit(request):
     },
 )
 @api_view(["POST"])
-def get_one(request, id):
+def get_one(request):
     try:
         token = request.data.get("token")
         key = Token.objects.get(key=token)
