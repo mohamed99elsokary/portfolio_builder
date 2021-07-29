@@ -205,9 +205,9 @@ def edit(request):
     request_body=openapi.Schema(
         type=openapi.TYPE_OBJECT,
         properties={
-            "id": openapi.Schema(
+            "token": openapi.Schema(
                 type=openapi.TYPE_INTEGER,
-                description="user id",
+                description="token u will get after login/register",
             ),
         },
     ),
@@ -217,7 +217,7 @@ def edit(request):
             examples={
                 "application/json": {
                     "data": {
-                        "id": 22,
+                        "token": "05316f8af683c8e22968f2e0c4fe9c1dd43903c2",
                         "education": [
                             {
                                 "id": 7,
@@ -392,15 +392,16 @@ def edit(request):
         ),
     },
 )
-@api_view(["POST", "GET"])
-def get(request, id):
+@api_view(["POST"])
+def get_one(request, id):
     try:
-        # id = request.data.get("id")
-        user = models.profiles.objects.get(id=id)
+        token = request.data.get("token")
+        key = Token.objects.get(key=token)
+        user = models.profiles.objects.get(token=key)
         data = profilesSerializer(user).data
         return Response({"data": data, "status": successful})
     except:
-        return Response({"data": data, "status": unexpected})
+        return Response({"data": [], "status": unexpected})
 
 
 @api_view(["GET"])

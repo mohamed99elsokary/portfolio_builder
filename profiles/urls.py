@@ -7,11 +7,10 @@ from . import api
 
 
 urlpatterns = [
-    # path("login/", include("rest_framework.urls")),
-    path("login/", api.login),
     path("register/", api.register),
+    path("login/", api.login),
     path("edit/", api.edit),
-    path("<int:id>", api.get),
+    path("get_one/", api.get_one),
     path("", api.get_all),
     # ----------------------------------------------------------------contact_info
     path("create_contact_info/", api.create_contact_info),
