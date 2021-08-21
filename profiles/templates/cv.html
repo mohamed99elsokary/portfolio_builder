@@ -4,76 +4,77 @@
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
     <title>{{user.name}}</title>
   </head>
-  <link media="all" href="{% static 'css/stylesheet.css'%}" rel="stylesheet" />
+  <link
+      media="all"
+      href="{% static 'css/stylesheet.css'%}"
+      rel="stylesheet"
+    />
 
   <body class="c22">
     <h2 class="c17 c19"><span class="c18">{{user.name}}</span></h2>
     <p class="c17">
       <span class="c14">&nbsp;</span
       ><span class="c3"
-        >{{user.country_id}}, {{user.city_id}} | {{email}} |
-        {{phone_number}}</span
+        >{{user.country_id}}, {{user.city_id}} | {{email}} | {{phone_number}}</span
       >
     </p>
     <p class="c11"><span class="c7 c6 c5">Personal profile</span></p>
     <p>
-      <span class="c3 c6 c5"> {{user.bio}}</span>
+      <span class="c3 c6 c5 ">
+        {{user.bio}}</span>
     </p>
-    <br />
+    <br>
     <div class="table_with_2_columns">
-      <table style="width: 100%">
-        {%for focus_point in focus_points %}
-        <tr>
-          <td class="c6 c5 c9">{{focus_point.point}}</td>
-        </tr>
-        {%endfor%}
-      </table>
-    </div>
+    <table style="width:100%">
+      {%for focus_point in focus_points %}
+      <tr>
+        <td class="c6 c5 c9">{{focus_point.point}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+  </div>
 
     <p class="c11"><span class="c7 c6 c5">Education</span></p>
 
-    <table style="width: 100%">
+    <table style="width:100%">
       {%for education in educations %}
       <tr>
-        <td class="c6 c5 c9">
-          {{education.organization_id}} {{education.field_name}}
-        </td>
-        <td class="c6 c5 c9">
-          {{education.start_date}} | {% if education.end_date != null
-          %}{{education.end_date}}{%else%}Until now{%endif%}
-        </td>
+        <td class="c6 c5 c9">{{education.organization_id}} {{education.field_name}}</td>
+        <td class="c6 c5 c9">{{education.start_date}} | {% if education.end_date != null %}{{education.end_date}}{%else%}Until now{%endif%}</td>
       </tr>
       {%endfor %}
     </table>
 
     <p class="c11"><span class="c7">Courses</span></p>
-    <table style="width: 100%">
+    <table style="width:100%">
       {%for course in courses %}
       <tr>
         <td class="c6 c5 c9">{{course.organization}} {{course.name}}</td>
-        <td class="c6 c5 c9">
-          {{course.start_date}} | {% if course.end_date != null
-          %}{{course.end_date}}{%else%}Until now{%endif%}
-        </td>
+        <td class="c6 c5 c9">{{course.start_date}} | {% if course.end_date != null %}{{course.end_date}}{%else%}Until now{%endif%}</td>
       </tr>
       {%endfor %}
     </table>
 
+ 
+
+
     <p class="c11"><span class="c7">Projects</span></p>
     <div class="table_with_2_columns">
-      <table style="width: 100%">
-        {%for project in projects %}
-        <tr>
-          <td class="c6 c5 c9">{{project}}</td>
-        </tr>
-        {%endfor%}
-      </table>
-    </div>
+
+    <table style="width:100%">
+      {%for project in projects %}
+      <tr>
+        <td class="c6 c5 c9">{{project}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+  </div>
+
 
     <p class="c11"><span class="c7 c6 c5">Language Skills:</span></p>
-
+    
     <div class="table_with_2_columns">
-      <table style="width: 100%">
+      <table style="width:100%">
         {%for language in languages %}
         <tr>
           <td class="c6 c5 c9">{{language.name}} : {{language.level}}</td>
@@ -82,9 +83,11 @@
       </table>
     </div>
 
+
+    
     <p class="c11"><span class="c7">Skills</span></p>
     <div class="table_with_2_columns">
-      <table style="width: 100%">
+      <table style="width:100%">
         {%for skill in skills %}
         <tr>
           <td class="c6 c5 c9">{{skill.skills_id.name}}</td>
