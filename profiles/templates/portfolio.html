@@ -820,10 +820,15 @@
                                                   </h5>
                                                   <div class="mb-15">
                                                     <div>
-                                                      <p>{{project.start_date}} : 
-                                                        {{project.end_date}}</p>
                                                       <p>
+                                                        {%if project.start_date is not None %}
+                                                        {{project.start_date}} : 
+                                                        {{project.end_date}}
+                                                      {%endif%}</p>
+                                                      <p>
+                                                        {%if project.descreption is not None %}
                                                         {{project.descreption}}
+                                                        {%endif%}
                                                       </p>
                                                       <b>bullet points</b> 
                                                       {%for bullet_point in project.bullet_points %}
