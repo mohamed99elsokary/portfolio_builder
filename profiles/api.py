@@ -394,11 +394,13 @@ def edit(request):
 )
 @api_view(["POST"])
 def get_one(request):
+    token = request.data.get("token")
+    key = Token.objects.get(key=token)
+    user = models.profiles.objects.get(user=key.user)
+    data = profilesSerializer(user).data
+    return Response({"data": data, "status": successful})
     try:
-        id = request.data.get("id")
-        user = models.profiles.objects.get(id=id)
-        data = profilesSerializer(user).data
-        return Response({"data": data, "status": successful})
+        pass
     except:
         return Response({"data": [], "status": unexpected})
 

@@ -46,7 +46,7 @@ class projects(models.Model):
     descreption = models.CharField(max_length=30, null=True, blank=True)
     icon = models.ImageField(upload_to="upload/projects_icons/", null=True, blank=True)
     start_date = models.DateField(null=True, blank=True)
-    name = models.CharField(max_length=30, null=True, blank=True)
+    name = models.CharField(max_length=300, null=True, blank=True)
     icon_url = models.URLField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
 

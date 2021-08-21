@@ -9,6 +9,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from profiles import views as profiles
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -24,6 +25,9 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path("portfolio/", profiles.portfolio),
+    path("cv/", profiles.cv),
+    
     path("profiles/", include("profiles.urls")),
     path("skills/", include("skills.urls")),
     path("work_experience/", include("work_experience.urls")),

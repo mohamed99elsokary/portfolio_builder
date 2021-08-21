@@ -1,5 +1,4 @@
 from django.db import models
-from django.urls import reverse
 
 
 class education(models.Model):
@@ -18,23 +17,26 @@ class education(models.Model):
     # Fields
     end_date = models.DateField(null=True, blank=True)
     start_date = models.DateField(null=True, blank=True)
+    field_name = models.CharField(max_length=255 , null=True, blank=True , default=None)
 
     def __str__(self):
-        return str(self.pk)
+        return str(self.profile_id)
 
 
 class courses(models.Model):
 
     # Relationships
-    education_id = models.ForeignKey(
-        "education.education",
-        on_delete=models.CASCADE,
-        related_name="education_courses",
-    )
+    profile_id = models.ForeignKey(
+        "profiles.profiles", related_name="profile_courses", on_delete=models.CASCADE , null=True , blank=True, default=None  )
 
+    organization = models.ForeignKey(
+        "work_experience.organizations",
+        on_delete=models.CASCADE,
+        related_name="organization_courses",
+        null=True, blank=True, default=None )
     # Fields
     certificate_url = models.URLField(null=True, blank=True)
-    name = models.CharField(max_length=30, null=True, blank=True)
+    name = models.CharField(max_length=300, null=True, blank=True)
     start_date = models.DateField(null=True, blank=True)
     course_expected_time = models.CharField(max_length=30, null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)

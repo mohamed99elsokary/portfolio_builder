@@ -92,7 +92,7 @@ class profilesSerializer(serializers.ModelSerializer):
         many=True, source="profile_skills"
     )
     contact_info = contact_infoSerializer(many=True, source="profile_contacts")
-    # phone_numbers = phone_numbersSerializer(many=True, source="profile_phones")
+    phone_numbers = phone_numbersSerializer(many=True, source="profile_phones")
 
     Languages = LanguagesSerializer(many=True, source="profile_Languages")
     country = serializers.SlugRelatedField(

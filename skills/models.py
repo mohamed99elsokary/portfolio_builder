@@ -41,6 +41,10 @@ class user_skills(models.Model):
     # Fields
     projects_number = models.IntegerField(null=True, blank=True)
     sample_url = models.URLField(null=True, blank=True)
+    level = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
-        return str(self.pk)
+        if (self.level is None):
+            self.level = ""
+        show = f"{self.profile_id} {self.skills_id} {self.level}"
+        return str(show)

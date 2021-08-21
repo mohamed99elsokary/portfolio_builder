@@ -65,7 +65,9 @@ class profiles(models.Model):
 
     token = models.OneToOneField(Token, on_delete=models.CASCADE, null=True, blank=True)
 
+    
     # Fields
+    bio = models.TextField(null = True, blank = True , default=None)
 
     about = models.TextField(max_length=100, null=True, blank=True)
     image = models.ImageField(upload_to="upload/images/", null=True, blank=True)
@@ -117,7 +119,14 @@ class Languages(models.Model):
 
     # Fields
     name = models.CharField(max_length=30, null=True, blank=True)
-    level = models.IntegerField(null=True, blank=True)
+    level = models.CharField(max_length=30, null=True, blank=True)
 
     def __str__(self):
         return str(self.name)
+
+class focus_points(models.Model):
+    profile = models.ForeignKey(profiles , on_delete=models.CASCADE)
+    point = models.CharField(max_length = 150)
+    def __str__(self):
+        show = f"{str(self.profile)} {str(self.point)}"
+        return str(show)
