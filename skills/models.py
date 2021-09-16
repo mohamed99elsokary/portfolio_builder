@@ -1,6 +1,4 @@
 from django.db import models
-from django.urls import reverse
-
 
 class skills(models.Model):
 
@@ -12,7 +10,6 @@ class skills(models.Model):
     def __str__(self):
         return str(self.name)
 
-
 class categories(models.Model):
 
     # Fields
@@ -20,7 +17,6 @@ class categories(models.Model):
 
     def __str__(self):
         return str(self.name)
-
 
 class user_skills(models.Model):
 
