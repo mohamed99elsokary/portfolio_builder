@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'education_courses_list' %}">
+    courses Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="certificate_url">certificate_url: </label>
+  <input class="form-control col-sm-10" id="certificate_url" type="text" name="certificate_url" value="{{ object.certificate_url }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="name">name: </label>
+  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="start_date">start_date: </label>
+  <input class="form-control col-sm-10" id="start_date" type="date" name="start_date" value="{{ object.start_date }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="course_expected_time">course_expected_time: </label>
+  <input class="form-control col-sm-10" id="course_expected_time" type="text" name="course_expected_time" value="{{ object.course_expected_time }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="end_date">end_date: </label>
+  <input class="form-control col-sm-10" id="end_date" type="date" name="end_date" value="{{ object.end_date }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="highlight">highlight: </label>
+  <input class="form-control col-sm-10" id="highlight" type="text" name="highlight" value="{{ object.highlight }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="certificate_file">certificate_file: </label>
+  <input class="form-control col-sm-10" id="certificate_file" type="file" name="certificate_file" value="{{ object.certificate_file }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

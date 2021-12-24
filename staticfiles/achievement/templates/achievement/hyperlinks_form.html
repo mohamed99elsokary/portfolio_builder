@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'achievement_hyperlinks_list' %}">
+    hyperlinks Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="url">url: </label>
+  <input class="form-control col-sm-10" id="url" type="text" name="url" value="{{ object.url }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="start_index">start_index: </label>
+  <input class="form-control col-sm-10" id="start_index" type="number" name="start_index" value="{{ object.start_index }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="end_index">end_index: </label>
+  <input class="form-control col-sm-10" id="end_index" type="number" name="end_index" value="{{ object.end_index }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

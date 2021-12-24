@@ -1,0 +1,1406 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://bslthemes.site/arter/ -->
+<html lang="en-US" class="swup-enabled">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <link
+      media="all"
+      href="{% static 'css/autoptimize_3d8ee528a4c6997a59b1eedd16cc7aeb.css'%}"
+      rel="stylesheet"
+    />
+    <title>{{user.name}}</title>
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+    <link rel="dns-prefetch" href="https://s.w.org/" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Arter - CV Resume WordPress Theme » Feed"
+      href="https://bslthemes.site/arter/feed/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Arter - CV Resume WordPress Theme » Comments Feed"
+      href="https://bslthemes.site/arter/comments/feed/"
+    />
+    <script type="text/javascript">
+      window._wpemojiSettings = {
+        baseUrl: "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
+        ext: ".png",
+        svgUrl: "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/",
+        svgExt: ".svg",
+        source: {
+          concatemoji:
+            "https:\/\/bslthemes.site\/arter\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8",
+        },
+      };
+      !(function (e, a, t) {
+        var n,
+          r,
+          o,
+          i = a.createElement("canvas"),
+          p = i.getContext && i.getContext("2d");
+        function s(e, t) {
+          var a = String.fromCharCode;
+          p.clearRect(0, 0, i.width, i.height),
+            p.fillText(a.apply(this, e), 0, 0);
+          e = i.toDataURL();
+          return (
+            p.clearRect(0, 0, i.width, i.height),
+            p.fillText(a.apply(this, t), 0, 0),
+            e === i.toDataURL()
+          );
+        }
+        function c(e) {
+          var t = a.createElement("script");
+          (t.src = e),
+            (t.defer = t.type = "text/javascript"),
+            a.getElementsByTagName("head")[0].appendChild(t);
+        }
+        for (
+          o = Array("flag", "emoji"),
+            t.supports = { everything: !0, everythingExceptFlag: !0 },
+            r = 0;
+          r < o.length;
+          r++
+        )
+          (t.supports[o[r]] = (function (e) {
+            if (!p || !p.fillText) return !1;
+            switch (
+              ((p.textBaseline = "top"), (p.font = "600 32px Arial"), e)
+            ) {
+              case "flag":
+                return s(
+                  [127987, 65039, 8205, 9895, 65039],
+                  [127987, 65039, 8203, 9895, 65039]
+                )
+                  ? !1
+                  : !s(
+                      [55356, 56826, 55356, 56819],
+                      [55356, 56826, 8203, 55356, 56819]
+                    ) &&
+                      !s(
+                        [
+                          55356, 57332, 56128, 56423, 56128, 56418, 56128,
+                          56421, 56128, 56430, 56128, 56423, 56128, 56447,
+                        ],
+                        [
+                          55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418,
+                          8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128,
+                          56423, 8203, 56128, 56447,
+                        ]
+                      );
+              case "emoji":
+                return !s(
+                  [10084, 65039, 8205, 55357, 56613],
+                  [10084, 65039, 8203, 55357, 56613]
+                );
+            }
+            return !1;
+          })(o[r])),
+            (t.supports.everything = t.supports.everything && t.supports[o[r]]),
+            "flag" !== o[r] &&
+              (t.supports.everythingExceptFlag =
+                t.supports.everythingExceptFlag && t.supports[o[r]]);
+        (t.supports.everythingExceptFlag =
+          t.supports.everythingExceptFlag && !t.supports.flag),
+          (t.DOMReady = !1),
+          (t.readyCallback = function () {
+            t.DOMReady = !0;
+          }),
+          t.supports.everything ||
+            ((n = function () {
+              t.readyCallback();
+            }),
+            a.addEventListener
+              ? (a.addEventListener("DOMContentLoaded", n, !1),
+                e.addEventListener("load", n, !1))
+              : (e.attachEvent("onload", n),
+                a.attachEvent("onreadystatechange", function () {
+                  "complete" === a.readyState && t.readyCallback();
+                })),
+            (n = t.source || {}).concatemoji
+              ? c(n.concatemoji)
+              : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji)));
+      })(window, document, window._wpemojiSettings);
+    </script>
+    <script
+      src="{% static 'css/wp-emoji-release.min.js.download'%}"
+      type="text/javascript"
+      defer=""
+    ></script>
+    <link
+      rel="stylesheet"
+      id="arter-fonts-css"
+      href="{% static 'css/css.css'%}"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-post-242-css"
+      href="{% static 'css/autoptimize_single_daaf80c61253e7bb0b823729a22ca254.css'%}"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="google-fonts-1-css"
+      href="{% static 'css/css(1).css'%}"
+      type="text/css"
+      media="all"
+    />
+    <script
+      type="text/javascript"
+      src="{% static 'css/jquery.min.js.download'%}"
+      id="jquery-core-js"
+    ></script>
+    <link
+      rel="https://api.w.org/"
+      href="https://bslthemes.site/arter/wp-json/'%}"
+    />
+    <link
+      rel="alternate"
+      type="application/json"
+      href="https://bslthemes.site/arter/wp-json/wp/v2/pages/13"
+    />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://bslthemes.site/arter/xmlrpc.php?rsd"
+    />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="https://bslthemes.site/arter/wp-includes/wlwmanifest.xml"
+    />
+    <meta name="generator" content="WordPress 5.8" />
+    <link rel="canonical" href="https://bslthemes.site/arter/" />
+    <link rel="shortlink" href="https://bslthemes.site/arter/" />
+    <link
+      rel="alternate"
+      type="application/json+oembed"
+      href="https://bslthemes.site/arter/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbslthemes.site%2Farter%2F"
+    />
+    <link
+      rel="alternate"
+      type="text/xml+oembed"
+      href="https://bslthemes.site/arter/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbslthemes.site%2Farter%2F&amp;format=xml"
+    />
+  </head>
+  <body
+    class="
+      home
+      page-template
+      page-template-template-layout-builder
+      page-template-template-layout-builder-php
+      page
+      page-id-13
+      default--scrolling
+      elementor-default elementor-kit-242 elementor-page elementor-page-13
+      e--ua-blink e--ua-chrome e--ua-webkit
+      dialog-body
+      dialog-lightbox-body
+      dialog-container
+      dialog-lightbox-container
+      fixed
+    "
+    data-elementor-device-mode="desktop"
+    data-new-gr-c-s-check-loaded="14.1026.0"
+    data-gr-ext-installed=""
+  >
+    <div class="art-app">
+      <div class="art-mobile-top-bar"></div>
+      <div class="art-preloader" style="opacity: 0; display: none">
+        <div class="art-preloader-content">
+          <h4>{{user.name}}</h4>
+
+          <div
+            id="preloader"
+            class="art-preloader-load"
+            style="position: relative"
+          >
+            <div class="art-preloader-load-first" style="display: none">
+              <svg
+                viewBox="0 0 100 1.7"
+                preserveAspectRatio="none"
+                style="width: 100%; height: 100%"
+              >
+                <path
+                  d="M 0,0.85 L 100,0.85"
+                  stroke="#eee"
+                  stroke-width="1.7"
+                  fill-opacity="0"
+                ></path>
+              </svg>
+              <div class="progressbar-text">0 %</div>
+            </div>
+            <svg
+              viewBox="0 0 100 1.7"
+              preserveAspectRatio="none"
+              style="width: 100%; height: 100%"
+            >
+              <path
+                d="M 0,0.85 L 100,0.85"
+                stroke="#eee"
+                stroke-width="1.7"
+                fill-opacity="0"
+              ></path>
+              <path
+                d="M 0,0.85 L 100,0.85"
+                stroke="#555"
+                stroke-width="1.7"
+                fill-opacity="0"
+                style="stroke-dasharray: 100, 100; stroke-dashoffset: 0"
+              ></path>
+            </svg>
+            <div
+              class="progressbar-text"
+              style="
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                padding: 0px;
+                margin: 0px;
+                transform: translate(-50%, -50%);
+                color: rgb(85, 85, 85);
+              "
+            >
+              100 %
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="art-app-wrapper">
+        <div class="art-app-container">
+          <div class="art-info-bar">
+            <div class="art-info-bar-frame">
+              <div class="art-info-bar-header">
+                <a class="art-info-bar-btn">
+                  <i class="fas fa-ellipsis-v"></i>
+                </a>
+              </div>
+              <div class="art-header">
+                <div class="art-avatar">
+                  <a
+                    data-no-swup=""
+                    href="https://bslthemes.site/arter/wp-content/uploads/2020/09/face-1-min.jpg"
+                    class="art-avatar-curtain"
+                  >
+                    <img
+                      src="{% static 'css/face-1-small.jpg'%}"
+                      alt="avatar"
+                    />
+                    <i class="fas fa-expand"></i>
+                  </a>
+                  <div class="art-lamp-light">
+                    <div
+                      class="art-available-lamp"
+                      title="I am available for freelance hire"
+                    ></div>
+                  </div>
+                </div>
+                <h5 class="art-name mb-10">
+                  <a href="https://bslthemes.site/arter">{{user.name}}</a>
+                </h5>
+
+                <div class="art-sm-text">
+                  {{user.field_id}} <br />
+                  {{user.job_titles_id}}
+                </div>
+              </div>
+              
+              <div id="scrollbar2" class="art-scroll-frame">
+                <div class="art-table p-15-15">
+                  <ul>
+                    <li>
+                      <h6>Residence:</h6>
+                      <span>{{user.country_id}}</span>
+                    </li>
+                    <li>
+                      <h6>City:</h6>
+                      <span>{{user.city_id}}</span>
+                    </li>
+                    <!-- <li>
+                      <h6>Age:</h6>
+                      <span>26</span>
+                    </li> -->
+                  </ul>
+                </div>
+                <div class="art-ls-divider"></div>
+                <h5 class="art-title-h">Contact Info</h5>
+                <div class="art-lang-skills p-30-15">
+                  {%for phone in phone_numbers %}
+                  <div class="art-skill-heading">
+                    <h6>{{phone.name}} : {{phone.number}}</h6> 
+                    <br>
+                  </div>
+                  {%endfor%}
+                  {%for contact in contact_info%}
+                  <div class="art-skill-heading">
+                    <a href="{{contact.url}}"> <h6>{{contact.name}}</h6> </a> 
+                    <br>
+                  </div>
+                  {%endfor%}
+                </div>
+
+                <div class="art-ls-divider"></div>
+                <h5 class="art-title-h">Languages</h5>
+                <div class="art-lang-skills p-30-15">
+                  {%for language in languages%}
+
+                  <div class="art-lang-skills-item">
+                    <div
+                      data-type="circles"
+                      data-value="70"
+                      class="art-cirkle-progress art-skills-progress"
+                      style="position: relative"
+                    >
+                      <div
+                        style="
+                          position: absolute;
+                          left: 50%;
+                          top: 50%;
+                          padding: 0px;
+                          margin: 0px;
+                          transform: translate(-50%, -50%);
+                          color: rgb(85, 85, 85);
+                        "
+                      >
+                        <h6>{{language.name}}</h6>
+                      </div>
+                    </div>
+                    {%if language.level != None%}
+                    {{language.level}}
+                    {%endif%}
+                  </div>
+                  {%endfor%}
+                </div>
+                <div class="art-ls-divider"></div>
+                <h5 class="art-title-h">Skills</h5>
+                <div class="art-hard-skills p-30-15">
+                  {%for skill in skills %}
+                  <div class="art-hard-skills-item">
+                    <div class="art-skill-heading">
+                      <h6>{{skill.skills_id}}</h6>
+                    </div>
+                    {%if skill.level != None%}
+                    <div class="art-line-progress">
+                      <div
+                        id="lineprog2-1"
+                        data-type="progress"
+                        data-value="90"
+                        class="art-skills-progress"
+                        style="position: relative"
+                      >
+                        <svg
+                          viewBox="0 0 100 1.72"
+                          preserveAspectRatio="none"
+                          style="width: 100%; height: 100%"
+                        >
+                          <path
+                            d="M 0,0.86 L 100,0.86"
+                            stroke="#eee"
+                            stroke-width="1.72"
+                            fill-opacity="0"
+                          ></path>
+                          <path
+                            d="M 0,0.86 L 100,0.86"
+                            stroke="#555"
+                            stroke-width="1.72"
+                            fill-opacity="0"
+                            style="
+                              stroke-dasharray: 100, 100;
+                              stroke-dashoffset: 100;
+                            "
+                          ></path>
+                        </svg>
+                        <div
+                          class="progressbar-text"
+                          style="
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            padding: 0px;
+                            margin: 0px;
+                            transform: translate(-50%, -50%);
+                            color: rgb(85, 85, 85);
+                          "
+                        >
+                          {{skill.level}} %
+                        </div>
+                      </div>
+                    </div>
+                    {%endif%}
+                  </div>
+                  {%endfor %}
+                </div>
+                <div class="art-ls-divider"></div>
+
+                <div class="art-links-frame p-15-15">
+                  <a href="/cv/" class="art-link" target="_blank"
+                    >Download cv <i class="fas fa-download"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="art-content">
+            <div class="art-curtain"></div>
+            <div
+              class="art-top-bg"
+              style="
+                background-image: url(https://bslthemes.site/arter/wp-content/uploads/2020/09/bg.jpg);
+              "
+            >
+              <div class="art-top-bg-overlay"></div>
+            </div>
+            <div class="transition-fade" id="swup" data-swup="0">
+              <div id="scrollbar" class="art-scroll-frame">
+                <div
+                  id="post-13"
+                  class="post-13 page type-page status-publish hentry"
+                >
+                  <div
+                    data-elementor-type="wp-page"
+                    data-elementor-id="13"
+                    class="elementor elementor-13"
+                    data-elementor-settings="[]"
+                  >
+                    <div class="elementor-inner">
+                      <div class="elementor-section-wrap">
+                        <section
+                          class="
+                            elementor-section
+                            elementor-top-section
+                            elementor-element
+                            elementor-element-82626cb
+                            elementor-section-full_width
+                            elementor-section-height-default
+                            elementor-section-height-default
+                          "
+                          data-id="82626cb"
+                          data-element_type="section"
+                        >
+                          <div
+                            class="elementor-container elementor-column-gap-no"
+                          >
+                            <div class="elementor-row">
+                              <div
+                                class="
+                                  elementor-column
+                                  elementor-col-100
+                                  elementor-top-column
+                                  elementor-element
+                                  elementor-element-7920c75
+                                "
+                                data-id="7920c75"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="
+                                    elementor-column-wrap
+                                    elementor-element-populated
+                                  "
+                                >
+                                  <div class="elementor-widget-wrap">
+                                    <div
+                                      class="
+                                        elementor-element
+                                        elementor-element-cf9af66
+                                        elementor-widget
+                                        elementor-widget-arter-hero-banner
+                                      "
+                                      data-id="cf9af66"
+                                      data-element_type="widget"
+                                      data-widget_type="arter-hero-banner.default"
+                                    >
+                                      <div class="elementor-widget-container">
+                                        <div class="container-fluid">
+                                          <div
+                                            class="
+                                              row
+                                              p-30-0 p-lg-30-0 p-md-15-0
+                                            "
+                                          >
+                                            <div class="col-lg-12">
+                                              <div
+                                                class="art-a art-banner"
+                                                style="
+                                                  background-image: url(https://bslthemes.site/arter/wp-content/uploads/2020/09/bg.jpg);
+                                                "
+                                              >
+                                                <div
+                                                  class="art-banner-back"
+                                                ></div>
+                                                <div
+                                                  class="art-banner-dec"
+                                                ></div>
+                                                <div class="art-banner-overlay">
+                                                  <div class="art-banner-title">
+                                                    <h1
+                                                      class="
+                                                        art-banner-title-h
+                                                        mb-15
+                                                      "
+                                                    >
+                                                      <span>
+                                                        Discover my Amazing
+                                                        <br />Art Space!
+                                                      </span>
+                                                    </h1>
+                                                    <div
+                                                      class="
+                                                        art-lg-text art-code
+                                                        mb-25
+                                                      "
+                                                    >
+                                                      &lt;<i>code</i>&gt; I
+                                                      build
+                                                      <span
+                                                        class="txt-rotate"
+                                                        data-period="2000"
+                                                        data-rotate='[ "Restful-Api.","full stack websites.","databases.","scraping tools." ]'
+                                                        ><span class="wrap"
+                                                          >web interfaces.</span
+                                                        ></span
+                                                      >
+                                                      &lt;/<i>code</i>&gt;
+                                                    </div>
+                                                    <div
+                                                      class="art-buttons-frame"
+                                                    >
+                                                      <a
+                                                        href="/cv"
+                                                        class="
+                                                          art-btn art-btn-md
+                                                        "
+                                                        ><span
+                                                          >Explore cv</span
+                                                        ></a
+                                                      >
+                                                    </div>
+                                                  </div>
+                                                  <img
+                                                    src="{% static 'css/face-2-min.png'%}"
+                                                    class="art-banner-photo"
+                                                    alt="Photo"
+                                                  />
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section
+                          class="
+                            elementor-section
+                            elementor-top-section
+                            elementor-element
+                            elementor-element-0a7669a
+                            elementor-section-full_width
+                            elementor-section-height-default
+                            elementor-section-height-default
+                          "
+                          data-id="0a7669a"
+                          data-element_type="section"
+                        >
+                          <div
+                            class="elementor-container elementor-column-gap-no"
+                          >
+                            <div class="elementor-row">
+                              <div
+                                class="
+                                  elementor-column
+                                  elementor-col-100
+                                  elementor-top-column
+                                  elementor-element
+                                  elementor-element-a4e0a7e
+                                "
+                                data-id="a4e0a7e"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="
+                                    elementor-column-wrap
+                                    elementor-element-populated
+                                  "
+                                >
+                                  <div class="elementor-widget-wrap">
+                                    <div
+                                      class="
+                                        elementor-element
+                                        elementor-element-0c40e34
+                                        elementor-widget
+                                        elementor-widget-arter-numbers
+                                      "
+                                      data-id="0c40e34"
+                                      data-element_type="widget"
+                                      data-widget_type="arter-numbers.default"
+                                    >
+                                      <div class="elementor-widget-container">
+                                        <div class="container-fluid">
+                                          <div class="row">
+                                            <div class="col-md-3 col-6">
+                                              <div
+                                                class="art-counter-frame"
+                                                style="opacity: 1"
+                                              >
+                                                <div class="art-counter-box">
+                                                  <span
+                                                    class="art-counter"
+                                                    style="opacity: 1"
+                                                    >2</span
+                                                  >
+                                                  <span class="art-counter-plus"
+                                                    >+</span
+                                                  >
+                                                </div>
+                                                <h6>
+                                                  <span>
+                                                    Years Experience
+                                                  </span>
+                                                </h6>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                              <div
+                                                class="art-counter-frame"
+                                                style="opacity: 1"
+                                              >
+                                                <div class="art-counter-box">
+                                                  <span
+                                                    class="art-counter"
+                                                    style="opacity: 1"
+                                                    >{{total_projects}}</span
+                                                  >
+                                                </div>
+                                                <h6>
+                                                  <span>
+                                                    Completed Projects
+                                                  </span>
+                                                </h6>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                              <div
+                                                class="art-counter-frame"
+                                                style="opacity: 1"
+                                              >
+                                                <div class="art-counter-box">
+                                                  <span
+                                                    class="art-counter"
+                                                    style="opacity: 1"
+                                                    >{{total_projects}}</span
+                                                  >
+                                                </div>
+                                                <h6>
+                                                  <span> Happy Customers </span>
+                                                </h6>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                              <div
+                                                class="art-counter-frame"
+                                                style="opacity: 1"
+                                              >
+                                                <div class="art-counter-box">
+                                                  <span
+                                                    class="art-counter"
+                                                    style="opacity: 1"
+                                                    >20</span
+                                                  >
+                                                  <span class="art-counter-plus"
+                                                    >+</span
+                                                  >
+                                                </div>
+                                                <h6>
+                                                  <span>
+                                                    Honors and Awards
+                                                  </span>
+                                                </h6>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section
+                          class="
+                            elementor-section
+                            elementor-top-section
+                            elementor-element
+                            elementor-element-44ef86e
+                            elementor-section-full_width
+                            elementor-section-height-default
+                            elementor-section-height-default
+                          "
+                          data-id="44ef86e"
+                          data-element_type="section"
+                        >
+                          <div
+                            class="elementor-container elementor-column-gap-no"
+                          >
+                            <div class="elementor-row">
+                              <div
+                                class="
+                                  elementor-column
+                                  elementor-col-100
+                                  elementor-top-column
+                                  elementor-element
+                                  elementor-element-f5acb54
+                                "
+                                data-id="f5acb54"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="
+                                    elementor-column-wrap
+                                    elementor-element-populated
+                                  "
+                                >
+                                  <div class="elementor-widget-wrap">
+                                    <div
+                                      class="
+                                        elementor-element
+                                        elementor-element-f6aa688
+                                        elementor-widget
+                                        elementor-widget-arter-services
+                                      "
+                                      data-id="f6aa688"
+                                      data-element_type="widget"
+                                      data-widget_type="arter-services.default"
+                                    >
+                                      <div class="elementor-widget-container">
+                                        <div class="container-fluid">
+                                          <div class="row">
+                                            <div class="col-lg-12">
+                                              <div class="art-section-title">
+                                                <div class="art-title-frame">
+                                                  <h4 class="art-title-h">
+                                                    <span> Projects </span>
+                                                  </h4>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {%for project in projects %}
+                                            <div class="col-lg-4 col-md-6">
+                                              <div
+                                                class="
+                                                  art-a art-service-icon-box
+                                                "
+                                              >
+                                                <div
+                                                  class="art-service-ib-content"
+                                                >
+                                                  <h5 class="mb-15">
+                                                    <span>
+                                                      {{project.name}}
+                                                    </span>
+                                                  </h5>
+                                                  <div class="mb-15">
+                                                    <div>
+                                                      <p>
+                                                        {%if project.start_date is not None %}
+                                                        {{project.start_date}} : 
+                                                        {{project.end_date}}
+                                                      {%endif%}</p>
+                                                      <p>
+                                                        {%if project.descreption is not None %}
+                                                        {{project.descreption}}
+                                                        {%endif%}
+                                                      </p>
+                                                      <b>bullet points</b> 
+                                                      {%for bullet_point in project.bullet_points %}
+                                                      <p>
+                                                        {{bullet_point}}
+                                                      </p>
+                                                      {%endfor%}
+                                                    </div>
+                                                  </div>
+                                                  <div
+                                                    class="art-buttons-frame"
+                                                  >
+                                                    <a
+                                                      href="#"
+                                                      class="
+                                                        art-link
+                                                        art-color-link
+                                                        art-w-chevron
+                                                      "
+                                                    >
+                                                      <span> Try it Out </span>
+                                                    </a>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {%endfor%}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section
+                          class="
+                            elementor-section
+                            elementor-top-section
+                            elementor-element
+                            elementor-element-4513298
+                            elementor-section-full_width
+                            elementor-section-height-default
+                            elementor-section-height-default
+                          "
+                          data-id="4513298"
+                          data-element_type="section"
+                        >
+                          <div
+                            class="elementor-container elementor-column-gap-no"
+                          >
+                            <div class="elementor-row">
+                              <div
+                                class="
+                                  elementor-column
+                                  elementor-col-100
+                                  elementor-top-column
+                                  elementor-element
+                                  elementor-element-8f49654
+                                "
+                                data-id="8f49654"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="
+                                    elementor-column-wrap
+                                    elementor-element-populated
+                                  "
+                                >
+                                  <div class="elementor-widget-wrap">
+                                    <div
+                                      class="
+                                        elementor-element
+                                        elementor-element-3b9957e
+                                        elementor-widget
+                                        elementor-widget-arter-pricing
+                                      "
+                                      data-id="3b9957e"
+                                      data-element_type="widget"
+                                      data-widget_type="arter-pricing.default"
+                                    >
+                                      <div class="elementor-widget-container">
+                                        <div class="container-fluid">
+                                          <div class="row p-0-0">
+                                            <div class="col-lg-12">
+                                              <div class="art-section-title">
+                                                <div class="art-title-frame">
+                                                  <h4 class="art-title-h">
+                                                    <span> courses </span>
+                                                  </h4>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {% for course in courses %}
+                                            <div class="col-lg-4">
+                                              <div class="art-a art-price">
+                                                <div class="art-price-body">
+                                                  <h5 class="mb-30">
+                                                    <span> {{course.name}} </span>
+                                                  </h5>
+                                                  <div class="art-price-cost">
+                                                    <div class="art-number">
+                                                      <span
+                                                        class="art-number-span"
+                                                      >
+                                                      </span>
+                                                      <span> {{course.organization}} </span>
+                                                    </div>
+                                                  </div>
+                                                  <div class="art-price-list">
+                                                    <div>
+                                                      <ul>
+                                                        <li>Start date: {{course.start_date}}</li>
+                                                        <li>Start date: {{course.end_date}}</li>
+                                                        <li>expected time : {{course.course_expected_time}}</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {%endfor%}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section
+                          class="
+                            elementor-section
+                            elementor-top-section
+                            elementor-element
+                            elementor-element-07ddc02
+                            elementor-section-full_width
+                            elementor-section-height-default
+                            elementor-section-height-default
+                          "
+                          data-id="07ddc02"
+                          data-element_type="section"
+                        >
+                          <div
+                            class="elementor-container elementor-column-gap-no"
+                          >
+                            <div class="elementor-row">
+                              <div
+                                class="
+                                  elementor-column
+                                  elementor-col-100
+                                  elementor-top-column
+                                  elementor-element
+                                  elementor-element-60acb13
+                                "
+                                data-id="60acb13"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="
+                                    elementor-column-wrap
+                                    elementor-element-populated
+                                  "
+                                >
+                                  <div class="elementor-widget-wrap">
+                                    <div
+                                      class="
+                                        elementor-element
+                                        elementor-element-a37e878
+                                        elementor-widget
+                                        elementor-widget-arter-testimonials
+                                      "
+                                      data-id="a37e878"
+                                      data-element_type="widget"
+                                      data-widget_type="arter-testimonials.default"
+                                    >
+                                      <div class="elementor-widget-container">
+                                        <div class="container-fluid">
+                                          <div class="row">
+                                            <div class="col-lg-12">
+                                              <div class="art-section-title">
+                                                <div class="art-title-frame">
+                                                  <h4 class="art-title-h">
+                                                    <span>
+                                                      educations
+                                                    </span>
+                                                  </h4>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {%for education in educations %}
+                                            <div class="col-lg-6">
+                                              <div
+                                                class="
+                                                  swiper-container
+                                                  art-testimonial-slider
+                                                  swiper-container-initialized
+                                                  swiper-container-horizontal
+                                                "
+                                                style="overflow: visible"
+                                              >
+                                                    <div
+                                                      class="
+                                                        art-a art-testimonial
+                                                      "
+                                                    >
+                                                      <div
+                                                        class="testimonial-body"
+                                                      >
+                                                        <!-- 
+                                                          education images
+                                                          <img
+                                                          class="
+                                                            art-testimonial-face
+                                                          "
+                                                          src="{% static 'css/testimonial-1-140x140.jpg'%}"
+                                                          alt="Paul Trueman"
+                                                        /> -->
+                                                        <h5>
+                                                          <span>
+                                                            {{education.organization_id}}
+                                                          </span>
+                                                        </h5>
+                                                        <div
+                                                          class="
+                                                            art-el-suptitle
+                                                            mb-15
+                                                          "
+                                                        >
+                                                          <span>
+                                                            {{education.field_name}}
+                                                          </span>
+                                                        </div>
+                                                        <div
+                                                          class="
+                                                            mb-15
+                                                            art-el-description
+                                                          "
+                                                        >
+                                                          <div>
+
+
+                                                            
+                                                            <p>
+                                                              start date : {{education.start_date}} 
+                                                              <br>
+                                                              end date : 
+                                                              {% if education.end_date != None%}
+                                                              {{education.end_date}}
+                                                              {%else%}
+                                                              Until now
+                                                              {%endif%} 
+                                                            </p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                {%endfor%}
+                                                <span
+                                                  class="swiper-notification"
+                                                  aria-live="assertive"
+                                                  aria-atomic="true"
+                                                ></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <section
+                          class="
+                            elementor-section
+                            elementor-top-section
+                            elementor-element
+                            elementor-element-76e46d6
+                            elementor-section-full_width
+                            elementor-section-height-default
+                            elementor-section-height-default
+                          "
+                          data-id="76e46d6"
+                          data-element_type="section"
+                        >
+                          <div
+                            class="elementor-container elementor-column-gap-no"
+                          >
+                            <div class="elementor-row">
+                              <div
+                                class="
+                                  elementor-column
+                                  elementor-col-100
+                                  elementor-top-column
+                                  elementor-element
+                                  elementor-element-2c27663
+                                "
+                                data-id="2c27663"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="
+                                    elementor-column-wrap
+                                    elementor-element-populated
+                                  "
+                                >
+                                  <div class="elementor-widget-wrap">
+                                    <div
+                                      class="
+                                        elementor-element
+                                        elementor-element-aa59bfe
+                                        elementor-widget
+                                        elementor-widget-arter-clients
+                                      "
+                                      data-id="aa59bfe"
+                                      data-element_type="widget"
+                                      data-widget_type="arter-clients.default"
+                                    >
+                                      <div class="elementor-widget-container">
+                                        <div class="container-fluid">
+                                          <div class="row">
+                                            <div class="col-6 col-lg-3">
+                                              <a
+                                                href="https://bslthemes.site/arter/#"
+                                              >
+                                                <img
+                                                  class="art-brand"
+                                                  src="{% static 'css/brand-1-232x256.png'%}"
+                                                  alt="Brand 1"
+                                                />
+                                              </a>
+                                            </div>
+                                            <div class="col-6 col-lg-3">
+                                              <a
+                                                href="https://bslthemes.site/arter/#"
+                                              >
+                                                <img
+                                                  class="art-brand"
+                                                  src="{% static 'css/brand-2-229x256.png'%}"
+                                                  alt="Brand 2"
+                                                />
+                                              </a>
+                                            </div>
+                                            <div class="col-6 col-lg-3">
+                                              <a
+                                                href="https://bslthemes.site/arter/#"
+                                              >
+                                                <img
+                                                  class="art-brand"
+                                                  src="{% static 'css/brand-3-228x256.png'%}"
+                                                  alt="Brand 3"
+                                                />
+                                              </a>
+                                            </div>
+                                            <div class="col-6 col-lg-3">
+                                              <a
+                                                href="https://bslthemes.site/arter/#"
+                                              >
+                                                <img
+                                                  class="art-brand"
+                                                  src="{% static 'css/brand-1-232x256.png'%}"
+                                                  alt="Brand 4"
+                                                />
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid">
+                  <footer class="footer">
+                    <div>© 2021 All Rights Reserved.</div>
+                    <div>
+                      Email:
+                      <a href="mailto:mohamed99elsokary@gmail.com" target="_blank"
+                        >mohamed99elsokary@gmail.com</a
+                      >
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="{% static 'css/regenerator-runtime.min.js.download'%}"
+      id="regenerator-runtime-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'css/wp-polyfill.min.js.download'%}"
+      id="wp-polyfill-js"
+    ></script>
+    <script type="text/javascript" id="contact-form-7-js-extra">
+      var wpcf7 = {
+        api: {
+          root: "https:\/\/bslthemes.site\/arter\/wp-json\/",
+          namespace: "contact-form-7\/v1",
+        },
+      };
+    </script>
+    <script type="text/javascript" id="swup-js-extra">
+      var swup_url_data = {
+        url: "https:\/\/bslthemes.site\/arter\/wp-content\/themes\/arter",
+      };
+    </script>
+    <script type="text/javascript" id="elementor-frontend-js-before">
+      var elementorFrontendConfig = {
+        environmentMode: {
+          edit: false,
+          wpPreview: false,
+          isScriptDebug: false,
+        },
+        i18n: {
+          shareOnFacebook: "Share on Facebook",
+          shareOnTwitter: "Share on Twitter",
+          pinIt: "Pin it",
+          download: "Download",
+          downloadImage: "Download image",
+          fullscreen: "Fullscreen",
+          zoom: "Zoom",
+          share: "Share",
+          playVideo: "Play Video",
+          previous: "Previous",
+          next: "Next",
+          close: "Close",
+        },
+        is_rtl: false,
+        breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
+        responsive: {
+          breakpoints: {
+            mobile: {
+              label: "Mobile",
+              value: 767,
+              direction: "max",
+              is_enabled: true,
+              default_value: 767,
+            },
+            mobile_extra: {
+              label: "Mobile Extra",
+              value: 880,
+              direction: "max",
+              is_enabled: false,
+              default_value: 880,
+            },
+            tablet: {
+              label: "Tablet",
+              value: 1024,
+              direction: "max",
+              is_enabled: true,
+              default_value: 1024,
+            },
+            tablet_extra: {
+              label: "Tablet Extra",
+              value: 1365,
+              direction: "max",
+              is_enabled: false,
+              default_value: 1365,
+            },
+            laptop: {
+              label: "Laptop",
+              value: 1620,
+              direction: "max",
+              is_enabled: false,
+              default_value: 1620,
+            },
+            widescreen: {
+              label: "Widescreen",
+              value: 2400,
+              direction: "min",
+              is_enabled: false,
+              default_value: 2400,
+            },
+          },
+        },
+        version: "3.3.1",
+        is_static: false,
+        experimentalFeatures: {
+          e_import_export: true,
+          "landing-pages": true,
+          "elements-color-picker": true,
+          "admin-top-bar": true,
+        },
+        urls: {
+          assets:
+            "https:\/\/bslthemes.site\/arter\/wp-content\/plugins\/elementor\/assets\/",
+        },
+        settings: { page: [], editorPreferences: [] },
+        kit: {
+          active_breakpoints: ["viewport_mobile", "viewport_tablet"],
+          global_image_lightbox: "yes",
+          lightbox_enable_counter: "yes",
+          lightbox_enable_fullscreen: "yes",
+          lightbox_enable_zoom: "yes",
+          lightbox_enable_share: "yes",
+          lightbox_title_src: "title",
+          lightbox_description_src: "description",
+        },
+        post: {
+          id: 13,
+          title:
+            "Arter%20%E2%80%93%20CV%20Resume%20WordPress%20Theme%20%E2%80%93%20Just%20another%20WordPress%20site",
+          excerpt: "",
+          featuredImage: false,
+        },
+      };
+    </script>
+    <script
+      defer=""
+      src="{% static 'css/autoptimize_2dd77a4c1f711f73e21d96eca1ec15fe.js'%}"
+    ></script>
+    <span id="elementor-device-mode" class="elementor-screen-only"></span
+    ><style type="text/css">
+      .txt-rotate > .wrap {
+        border-right: 0.08em solid rgba(215, 205, 240, 0.6);
+        padding-right: 5px;
+      }
+    </style>
+    <div
+      class="
+        dialog-widget
+        dialog-lightbox-widget
+        dialog-type-buttons
+        dialog-type-lightbox
+        elementor-lightbox
+      "
+      id="elementor-lightbox-slideshow-single-img"
+      style="display: none"
+    >
+      <div
+        class="
+          dialog-widget-content dialog-lightbox-widget-content
+          elementor-aspect-ratio-169
+        "
+        style="top: 0px; left: 0px"
+      >
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Close (Esc)"
+          class="dialog-close-button dialog-lightbox-close-button"
+        >
+          <i class="eicon-close"></i>
+        </div>
+        <div class="dialog-header dialog-lightbox-header"></div>
+        <div class="dialog-message dialog-lightbox-message zoomIn"></div>
+        <div
+          class="dialog-buttons-wrapper dialog-lightbox-buttons-wrapper"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>

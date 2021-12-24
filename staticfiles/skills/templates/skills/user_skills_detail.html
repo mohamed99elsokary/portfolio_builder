@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'skills_user_skills_list' %}">
+    user_skills Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>projects_number</td><td>{{ object.projects_number }}</td></tr>
+    <tr><td>sample_url</td><td>{{ object.sample_url }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
