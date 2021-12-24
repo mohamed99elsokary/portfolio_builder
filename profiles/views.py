@@ -12,6 +12,7 @@ def data():
     token = "4f9fa19ae82e8253e633d1843f40e35997f2b9c2"
     key = Token.objects.get(key=token)
     user = models.profiles.objects.get(user=key.user)
+    print(user)
     languages = models.Languages.objects.filter(profile_id=user)
     contact_info = models.contact_info.objects.filter(profile_id=user)
     skills = skills_models.user_skills.objects.filter(profile_id=user)
