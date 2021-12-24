@@ -17,6 +17,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
 INSTALLED_APPS = [
+    "jazzmin",
     "django_extensions",
     "django.contrib.admin",
     "django.contrib.auth",

@@ -13,8 +13,8 @@ class work_experience(models.Model):
     organizations_id = models.ForeignKey(
         "work_experience.organizations", on_delete=models.CASCADE
     )
-
     # Fields
+    job_title = models.CharField(max_length=50, null=True, blank=True, default=None)
     end_date = models.DateField(null=True, blank=True)
     start_date = models.DateField(null=True, blank=True)
 
