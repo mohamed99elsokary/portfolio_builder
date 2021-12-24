@@ -114,11 +114,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# -------------------windows--------------#
+# STATIC_URL = "/static/"
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     "/var/www/static/",
+# ]
+# NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+# -------------------windows--------------#
+
+#  -------------------linux----------------#
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = [
-    BASE_DIR,
-    "static",
-    "/var/www/static/",
-]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+# -------------------linux----------------#
