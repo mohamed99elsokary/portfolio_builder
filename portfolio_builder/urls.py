@@ -26,8 +26,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("", profiles.portfolio),
-    path("portfolio/", profiles.portfolio),
-    path("cv/", profiles.cv),
+    path("portfolio", profiles.portfolio),
+    path("cv", profiles.cv),
     path("profiles/", include("profiles.urls")),
     path("skills/", include("skills.urls")),
     path("work_experience/", include("work_experience.urls")),
