@@ -26,6 +26,7 @@ def data():
         .reverse()
     )
     projects = project_models.projects.objects.filter(profile_id=user)
+    total_projects = projects.count()
     focus_points = models.focus_points.objects.filter(profile=user)
     work_experience = (
         work_experience_models.work_experience.objects.filter(profile_id=user)
@@ -49,6 +50,7 @@ def data():
         "projects": projects,
         "focus_points": focus_points,
         "work_experience": work_experience,
+        "total_projects": total_projects,
     }
     return context
 
