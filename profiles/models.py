@@ -72,6 +72,9 @@ class profiles(models.Model):
     image = models.ImageField(upload_to="upload/images/", null=True, blank=True)
     name = models.CharField(max_length=30, null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
+    sub_domain = models.CharField(
+        max_length=50, unique=True, null=True, blank=True, default=None
+    )
 
     def __str__(self):
         return str(self.name)
