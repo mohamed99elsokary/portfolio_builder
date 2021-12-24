@@ -10,7 +10,7 @@ from work_experience import models as work_experience_models
 def data(domain):
     domain = domain.split(".")[0]
     print(domain)
-    account = models.profiles.objects.get(subject=domain)
+    account = models.profiles.objects.get(sub_domain=domain)
     print(f"account {account}")
     user = account.user
     print(f"user {user}")
