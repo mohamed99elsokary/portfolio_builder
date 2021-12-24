@@ -9,7 +9,6 @@ from work_experience import models as work_experience_models
 
 def data(domain):
     domain = domain.split(".")[0]
-    print(domain)
     user = models.profiles.objects.get(sub_domain=domain)
     languages = models.Languages.objects.filter(profile_id=user)
     contact_info = models.contact_info.objects.filter(profile_id=user)
