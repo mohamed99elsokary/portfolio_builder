@@ -17,7 +17,8 @@ ALLOWED_HOSTS = [
     "mohamedelsokary.com",
     "mohamed.mohamedelsokary.com",
     "dasser.mohamedelsokary.com",
-    "ff.mohamedelsokary.com",
+    ".mohamedelsokary.com",
+    "*.mohamedelsokary.com",
     "18.198.107.110",
     "127.0.0.1",
 ]
