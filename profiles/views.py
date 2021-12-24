@@ -8,7 +8,6 @@ from work_experience import models as work_experience_models
 
 
 def data(domain):
-    print(domain)
     # token = "59c55426af71d2f51b374fa4704d5ac35633bfa9"
     token = "4f9fa19ae82e8253e633d1843f40e35997f2b9c2"
     key = Token.objects.get(key=token)

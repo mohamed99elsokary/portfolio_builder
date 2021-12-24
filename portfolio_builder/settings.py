@@ -13,7 +13,13 @@ SECRET_KEY = "^l)7d*%h&db4uft@dk%h-w&nup#pu%)a!d)c7jwgoixo5_hm0$"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["mohamedelsokary.com", "18.198.107.110", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "mohamedelsokary.com",
+    "mohamed.mohamedelsokary.com",
+    "dasser.mohamedelsokary.com",
+    "18.198.107.110",
+    "127.0.0.1",
+]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
