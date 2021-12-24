@@ -1,7 +1,8 @@
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -12,7 +13,7 @@ SECRET_KEY = "^l)7d*%h&db4uft@dk%h-w&nup#pu%)a!d)c7jwgoixo5_hm0$"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["mohamedelsokary.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["mohamedelsokary.com", "18.198.107.110", "127.0.0.1"]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
@@ -51,7 +52,7 @@ ROOT_URLCONF = "portfolio_builder.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["templates"],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -112,7 +113,11 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
+# Static files (CSS, JavaScript, Images)
+
+
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # -------------------windows--------------#
 # STATIC_URL = "/static/"
@@ -128,4 +133,11 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 # -------------------linux----------------#
+
+
+# Default primary key field type
+
+
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
