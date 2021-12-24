@@ -34,7 +34,7 @@ urlpatterns = [
     path("education/", include("education.urls")),
     path("projects/", include("projects.urls")),
     path("achievement/", include("achievement.urls")),
-    path("admin/", admin.site.urls),
+    path("admin", admin.site.urls),
     path("swagger/", schema_view.with_ui("swagger", cache_timeout=0)),
     path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
