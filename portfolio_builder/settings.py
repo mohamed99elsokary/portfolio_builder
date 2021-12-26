@@ -15,8 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "mohamedelsokary.com",
-    "mohamed.mohamedelsokary.com",
-    "dasser.mohamedelsokary.com",
+    "dasserbasyouni.com",
     ".mohamedelsokary.com",
     "*.mohamedelsokary.com",
     "18.198.107.110",
