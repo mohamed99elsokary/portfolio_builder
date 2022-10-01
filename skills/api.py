@@ -125,18 +125,14 @@ def edit_skill(request):
         skill = models.skills.objects.get(name=skill)
 
         def edit():
-            if category != None:
-                if category != "":
-                    user_skill.category_id = category
-            if skill != None:
-                if skill != "":
-                    user_skill.skills_id = skill
-            if project_number != None:
-                if project_number != "":
-                    user_skill.projects_number = project_number
-            if sample_url != None:
-                if sample_url != "":
-                    user_skill.sample_url = sample_url
+            if category not in [None, ""]:
+                user_skill.category_id = category
+            if skill not in [None, ""]:
+                user_skill.skills_id = skill
+            if project_number not in [None, ""]:
+                user_skill.projects_number = project_number
+            if sample_url not in [None, ""]:
+                user_skill.sample_url = sample_url
 
         edit()
         user_skill.save()

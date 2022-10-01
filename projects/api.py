@@ -130,21 +130,16 @@ def edit_project(request):
         project = models.projects.objects.get(id=id)
 
         def edit():
-            if descreption != None:
-                if descreption != "":
-                    project.descreption = descreption
-            if start_date != None:
-                if start_date != "":
-                    project.start_date = start_date
-            if end_date != None:
-                if end_date != "":
-                    project.end_date = end_date
-            if name != None:
-                if name != "":
-                    project.name = name
-            if icon_url != None:
-                if icon_url != "":
-                    project.icon_url = icon_url
+            if descreption not in [None, ""]:
+                project.descreption = descreption
+            if start_date not in [None, ""]:
+                project.start_date = start_date
+            if end_date not in [None, ""]:
+                project.end_date = end_date
+            if name not in [None, ""]:
+                project.name = name
+            if icon_url not in [None, ""]:
+                project.icon_url = icon_url
 
         edit()
         project.save()
@@ -264,9 +259,8 @@ def edit_bullet_point(request):
         bullet_point = models.bullet_points.objects.get(id=id)
 
         def edit():
-            if point_text != None:
-                if point_text != "":
-                    bullet_point.point_text = point_text
+            if point_text not in [None, ""]:
+                bullet_point.point_text = point_text
 
         edit()
         bullet_point.save()
@@ -393,12 +387,10 @@ def edit_url(request):
         old_url = models.urls.objects.get(id=id)
 
         def edit():
-            if url != None:
-                if url != "":
-                    old_url.url = url
-            if name != None:
-                if name != "":
-                    old_url.name = name
+            if url not in [None, ""]:
+                old_url.url = url
+            if name not in [None, ""]:
+                old_url.name = name
 
         edit()
         old_url.save()

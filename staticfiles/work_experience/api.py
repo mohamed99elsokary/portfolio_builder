@@ -112,19 +112,15 @@ def edit_work_experience(request):
         work_experience = models.work_experience.objects.get(id=id)
 
         def edit():
-            if start_date != None:
-                if start_date != "":
-                    work_experience.start_date = start_date
-            if end_date != None:
-                if end_date != "":
-                    work_experience.end_date = end_date
-            if organization != None:
-                if organization != "":
-
-                    new_organization = organizations_model.organizations.objects.get(
-                        name=organization
-                    )
-                    work_experience.organization = new_organization
+            if start_date not in [None, ""]:
+                work_experience.start_date = start_date
+            if end_date not in [None, ""]:
+                work_experience.end_date = end_date
+            if organization not in [None, ""]:
+                new_organization = organizations_model.organizations.objects.get(
+                    name=organization
+                )
+                work_experience.organization = new_organization
 
         edit()
         work_experience.save()
@@ -242,10 +238,9 @@ def edit_bullet_points(request):
         point_text = request.data.get("point_text")
 
         bullet_point = models.bullet_points.objects.get(id=id)
-        if point_text != None:
-            if point_text != "":
-                bullet_point.point_text = point_text
-                bullet_point.save()
+        if point_text not in [None, ""]:
+            bullet_point.point_text = point_text
+            bullet_point.save()
         return Response({"status": successful})
     except:
         return Response({"status": unexpected})
