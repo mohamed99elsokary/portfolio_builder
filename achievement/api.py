@@ -92,12 +92,10 @@ def edit_awards(request):
         award = models.award.objects.get(id=id)
 
         def edit():
-            if text != None:
-                if text != "":
-                    award.text = text
-            if order != None:
-                if order != "":
-                    award.order = order
+            if text not in [None, ""]:
+                award.text = text
+            if order not in [None, ""]:
+                award.order = order
 
         edit()
         award.save()
@@ -226,12 +224,10 @@ def edit_achievements(request):
         achievement = models.achievement.objects.get(id=id)
 
         def edit():
-            if text != None:
-                if text != "":
-                    achievement.text = text
-            if order != None:
-                if order != "":
-                    achievement.order = order
+            if text not in [None, ""]:
+                achievement.text = text
+            if order not in [None, ""]:
+                achievement.order = order
 
         edit()
         achievement.save()
@@ -321,13 +317,12 @@ def create_hyperlinks(request):
         start_index = request.data.get("start_index")
         end_index = request.data.get("end_index")
 
-        if achievement_id != None:
-            if achievement_id != "":
-                achievement = models.achievement.objects.get(id=achievement_id)
-                award = None
-        else:
+        if achievement_id is None:
             award = models.award.objects.get(id=award_id)
             achievement = None
+        elif achievement_id != "":
+            achievement = models.achievement.objects.get(id=achievement_id)
+            award = None
         hyperlink = models.hyperlinks.objects.create(
             url=url,
             start_index=start_index,
@@ -384,15 +379,12 @@ def edit_hyperlinks(request):
         hyperlink = models.hyperlinks.objects.get(id=id)
 
         def edit():
-            if url != None:
-                if url != "":
-                    hyperlink.url = url
-            if start_index != None:
-                if start_index != "":
-                    hyperlink.start_index = start_index
-            if end_index != None:
-                if end_index != "":
-                    hyperlink.end_index = end_index
+            if url not in [None, ""]:
+                hyperlink.url = url
+            if start_index not in [None, ""]:
+                hyperlink.start_index = start_index
+            if end_index not in [None, ""]:
+                hyperlink.end_index = end_index
 
         edit()
         hyperlink.save()

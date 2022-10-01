@@ -37,7 +37,7 @@ def data():
         if contact.name == "email":
             email = contact.url
 
-    context = {
+    return {
         "user": user,
         "email": email,
         "languages": languages,
@@ -52,7 +52,6 @@ def data():
         "work_experience": work_experience,
         "total_projects": total_projects,
     }
-    return context
 
 
 def portfolio(request):

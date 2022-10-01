@@ -163,34 +163,26 @@ def edit(request):
         profile = models.profiles.objects.get(id=id)
 
         def edit():
-            if birth_date != None:
-                if birth_date != "":
-                    profile.birth_date = birth_date
-            if about != None:
-                if about != "":
-                    profile.about = about
-            if image != None:
-                if image != "":
-                    profile.image = image
-            if name != None:
-                if name != "":
-                    profile.name = name
-            if country != None:
-                if country != "":
-                    new_country = models.country.objects.get(country=country)
-                    profile.country_id = new_country
-            if city != None:
-                if city != "":
-                    new_city = models.city.objects.get(city=city)
-                    profile.city_id = new_city
-            if field != None:
-                if field != "":
-                    new_field = models.fields.objects.get(field=field)
-                    profile.field_id = new_field
-            if job_title != None:
-                if job_title != "":
-                    new_job_title = models.job_titles.objects.get(job_title=job_title)
-                    profile.job_titles_id = new_job_title
+            if birth_date not in [None, ""]:
+                profile.birth_date = birth_date
+            if about not in [None, ""]:
+                profile.about = about
+            if image not in [None, ""]:
+                profile.image = image
+            if name not in [None, ""]:
+                profile.name = name
+            if country not in [None, ""]:
+                new_country = models.country.objects.get(country=country)
+                profile.country_id = new_country
+            if city not in [None, ""]:
+                new_city = models.city.objects.get(city=city)
+                profile.city_id = new_city
+            if field not in [None, ""]:
+                new_field = models.fields.objects.get(field=field)
+                profile.field_id = new_field
+            if job_title not in [None, ""]:
+                new_job_title = models.job_titles.objects.get(job_title=job_title)
+                profile.job_titles_id = new_job_title
             profile.save()
 
         edit()
@@ -399,10 +391,6 @@ def get_one(request):
     user = models.profiles.objects.get(user=key.user)
     data = profilesSerializer(user).data
     return Response({"data": data, "status": successful})
-    try:
-        pass
-    except:
-        return Response({"data": [], "status": unexpected})
 
 
 @api_view(["GET"])
@@ -507,12 +495,10 @@ def edit_contact_info(request):
         contact_info = models.contact_info.objects.get(id=id)
 
         def edit():
-            if name != None:
-                if name != "":
-                    contact_info.name = name
-            if url != None:
-                if url != "":
-                    contact_info.url = url
+            if name not in [None, ""]:
+                contact_info.name = name
+            if url not in [None, ""]:
+                contact_info.url = url
 
         if contact_info.profile_id == profile:
             edit()
@@ -653,12 +639,10 @@ def edit_language(request):
         language = models.Languages.objects.get(id=id)
 
         def edit():
-            if name != None:
-                if name != "":
-                    language.name = name
-            if level != None:
-                if level != "":
-                    language.level = level
+            if name not in [None, ""]:
+                language.name = name
+            if level not in [None, ""]:
+                language.level = level
 
         edit()
         language.save()
@@ -788,12 +772,10 @@ def edit_phone_number(request):
         phone_number = models.phone_numbers.objects.get(id=id)
 
         def edit():
-            if name != None:
-                if name != "":
-                    phone_number.name = name
-            if number != None:
-                if number != "":
-                    phone_number.number = number
+            if name not in [None, ""]:
+                phone_number.name = name
+            if number not in [None, ""]:
+                phone_number.number = number
 
         edit()
         phone_number.save()

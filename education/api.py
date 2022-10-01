@@ -112,19 +112,16 @@ def edit(request):
         education = models.education.objects.get(id=id)
 
         def edit():
-            if start_date != None:
-                if start_date != "":
-                    education.start_date = start_date
-            if end_date != None:
-                if end_date != "":
-                    education.end_date = end_date
-            if organization != None:
-                if organization != "":
-                    new_organization = organizations_model.organizations.objects.get(
-                        name=organization
-                    )
+            if start_date not in [None, ""]:
+                education.start_date = start_date
+            if end_date not in [None, ""]:
+                education.end_date = end_date
+            if organization not in [None, ""]:
+                new_organization = organizations_model.organizations.objects.get(
+                    name=organization
+                )
 
-                    education.organization = new_organization
+                education.organization = new_organization
 
         edit()
         education.save()
@@ -297,24 +294,18 @@ def edit_course(request):
         course = models.courses.objects.get(id=course_id)
 
         def edit():
-            if certificate_url != None:
-                if certificate_url != "":
-                    course.certificate_url = certificate_url
-            if name != None:
-                if name != "":
-                    course.name = name
-            if start_date != None:
-                if start_date != "":
-                    course.start_date = start_date
-            if end_date != None:
-                if end_date != "":
-                    course.end_date = end_date
-            if course_expected_time != None:
-                if course_expected_time != "":
-                    course.course_expected_time = course_expected_time
-            if is_highlighted != None:
-                if is_highlighted != "":
-                    course.is_highlighted = is_highlighted
+            if certificate_url not in [None, ""]:
+                course.certificate_url = certificate_url
+            if name not in [None, ""]:
+                course.name = name
+            if start_date not in [None, ""]:
+                course.start_date = start_date
+            if end_date not in [None, ""]:
+                course.end_date = end_date
+            if course_expected_time not in [None, ""]:
+                course.course_expected_time = course_expected_time
+            if is_highlighted not in [None, ""]:
+                course.is_highlighted = is_highlighted
 
         edit()
         course.save()
